@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shopping/model/product.dart';
 
 import '../../../constant.dart';
+import '../../../model/screen_arguments.dart';
 
 class Body extends StatelessWidget {
-  const Body({ Key? key, required this.product}) : super(key: key);
-
-  final Product product;
+  const Body({ Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as ScreenArguments;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -26,7 +25,7 @@ class Body extends StatelessWidget {
           ),
           child: TextFormField(
             maxLines: 1,
-            initialValue: product.title,
+            initialValue: args.title,
             decoration: const InputDecoration(
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
@@ -50,7 +49,7 @@ class Body extends StatelessWidget {
           ),
           child: TextFormField(
             maxLines: 3,
-            initialValue: product.description,
+            initialValue: args.description,
             decoration: const InputDecoration(
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,
@@ -74,7 +73,7 @@ class Body extends StatelessWidget {
           ),
           child: TextFormField(
             maxLines: 1,
-            initialValue: product.price.toString(),
+            initialValue: args.price,
             decoration: const InputDecoration(
               enabledBorder: InputBorder.none,
               focusedBorder: InputBorder.none,

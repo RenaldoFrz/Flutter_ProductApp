@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shopping/constant.dart';
-import 'package:flutter_shopping/routes.dart';
+
 import 'constant.dart';
+import 'routes.dart';
 import 'views/boarding_page/boarding_page.dart';
 
 void main() {

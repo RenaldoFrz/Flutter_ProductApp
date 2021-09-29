@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_shopping/constant.dart';
-import 'package:flutter_shopping/model/product.dart';
-import 'package:flutter_shopping/views/edit_page/components/body.dart';
+
+import '../../constant.dart';
+import 'components/body.dart';
 
 class EditPage extends StatelessWidget {
   static String routeName = "/edit_page";
-  final Product product; 
 
-  const EditPage({ Key? key, required this.product }) : super(key: key);
+  const EditPage({ Key? key }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return  Scaffold(
       appBar: headerDetail(context),
-      body: Body(product: product),
+      body: const Body(),
     );
   }
 
@@ -26,7 +25,7 @@ class EditPage extends StatelessWidget {
         color: kSecondaryColor,
         onPressed: () => Navigator.pop(context),
       ),
-      title: const Text('Details Product', style: TextStyle(fontSize: 18, color: kSecondaryDarkColor),),
+      title: const Text('Product', style: TextStyle(fontSize: 18, color: kSecondaryDarkColor),),
     );
   }
 }

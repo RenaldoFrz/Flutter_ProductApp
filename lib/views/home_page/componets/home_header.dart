@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_shopping/model/screen_arguments.dart';
+import 'package:flutter_shopping/views/edit_page/edit_page.dart';
 
-import '../../add_page/add_page.dart';
 import 'icon_counter.dart';
 import 'search_bar.dart';
 
@@ -24,7 +25,11 @@ class HomeHeader extends StatelessWidget {
           ),
           IconCounter(
             svgSrc: 'assets/icons/plus.svg',
-            press: () => Navigator.pushNamed(context, AddPage.routeName),
+            press: () => Navigator.pushNamed(
+              context, 
+              EditPage.routeName, 
+              arguments: ScreenArguments("", "", "")
+            ),
           ),
         ],
       ),

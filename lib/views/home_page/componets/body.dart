@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../model/screen_arguments.dart';
 import '../../edit_page/edit_page.dart';
 import '../../../model/product.dart';
 import 'home_header.dart';
@@ -40,11 +41,10 @@ class _BodyState extends State<Body> {
               ), 
               itemBuilder: (context, index) => ItemGrid(
                 product: products[index],
-                press: () => Navigator.push(
+                press: () => Navigator.pushNamed(
                   context, 
-                  MaterialPageRoute(builder: (context) => EditPage(
-                    product: products[index]
-                  ))
+                  EditPage.routeName,
+                  arguments: ScreenArguments(products[index].title, products[index].description, products[index].price.toString())
                 )
               )
             )
